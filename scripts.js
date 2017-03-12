@@ -21,7 +21,7 @@ app.controller('flickrCtrl', function($scope, $http, $timeout) {
         searchTimeout = $timeout(function () {
             searchTimeout = null;
             console.log("will call with : "+FLICKR_FEED+"&tags="+$scope.searchTerm);
-            $scope.loading = "loader.gif";  $scope.instruction = "";
+            $scope.loading = "https://raw.githubusercontent.com/anandamarsh/newscorp/master/loader.gif";  $scope.instruction = "";
             $http.jsonp(FLICKR_FEED+"&tags="+$scope.searchTerm).success(function(data) {
                 $scope.results = data.items.map(function(item) {
                     return {thumb:item.media.m, tags:item.tags, author:item.author, hires:item.link}
