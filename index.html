@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body ng-app="flickrApp" ng-controller="flickrCtrl">
+<body ng-app="flickrApp" ng-cloak  ng-controller="flickrCtrl">
 
 <!-- the search box. its a freetext box. user can enter anything, and we would try to put sense to it -->
 <div id="topStrip"><img/><input type="search" ng-model="searchTerm" ng-change="search()" placeholder="Type to search image"></div>
