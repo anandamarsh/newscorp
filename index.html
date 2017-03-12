@@ -16,7 +16,8 @@
 <div id="resultStrip" ng-hide="results && results.length==0">
     <!-- image thumbnail -->
     <div class="result" ng-repeat="result in results" style="background: url('{{result.thumb}}'); background-size:cover"
-         title="Author: {{result.author}} Tags: {{result.tags}}" ng-click="showHiRes(result)"></div>
+         title="[Author] {{result.author}}
+[Tags] {{result.tags}}" ng-click="showHiRes(result)"></div>
 </div>
 <!-- instructions, Author, Tags and hi-res image -->
 <div id="highRes">
