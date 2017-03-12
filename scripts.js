@@ -33,15 +33,16 @@ app.controller('flickrCtrl', function($scope, $http, $timeout) {
     }
 
     // upon clicking the thumbnail, show the full image
-    $scope.showHiRes = function(data) {
+    $scope.showHiRes = function(result) {
         // as per https://www.flickr.com/services/api/misc.urls.html , get the photoId from the thumbnail
-        var photoId = data.thumb.split("/").pop().split("_").shift();
+        var photoId = result.thumb.split("/").pop().split("_").shift();
         // lets define a high-resolution image as the largest image size available, for which, we call flickr.photos.getSizes
         console.log("will call : "+FLICKER_REST_GET_SIZE+photoId);
         $scope.loading = "loader.gif"; $scope.instruction = "";
         $http.jsonp(FLICKER_REST_GET_SIZE+photoId).success(function(data) {
             // the response comes with a bunch of sizes. we use the largest
             $scope.hires = data.sizes.size.pop().source;
+            $scope.author = result.author; $scope.tags = result.tags;
             $scope.loading = null;
         })
     }

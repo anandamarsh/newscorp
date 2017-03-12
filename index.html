@@ -15,10 +15,15 @@
 <!-- image thumbnail strip -->
 <div id="resultStrip" ng-hide="results && results.length==0">
     <!-- image thumbnail -->
-    <div class="result" ng-repeat="result in results" style="background: url('{{result.thumb}}'); background-size:cover" ng-click="showHiRes(result)"></div>
+    <div class="result" ng-repeat="result in results" style="background: url('{{result.thumb}}'); background-size:cover"
+         title="Author: {{result.author}} Tags: {{result.tags}}" ng-click="showHiRes(result)"></div>
 </div>
-<!-- instructions, and hi-res image -->
-<div id="highRes"><span id="instruction">{{instruction}}</span><img ng-src="{{loading?loading:hires}}"></div>
+<!-- instructions, Author, Tags and hi-res image -->
+<div id="highRes">
+    <span id="instruction">{{instruction}}</span>
+    <div id="authorAndTags" ng-show="hires">Author : {{author}}<br>Tags : {{tags}}</div>
+    <img ng-src="{{loading?loading:hires}}">
+</div>
 
 </body>
 </html>
