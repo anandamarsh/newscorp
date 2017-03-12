@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Newscorp Challenge</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-app="flickrApp" ng-controller="flickrCtrl">
+
+<!-- the search box. its a freetext box. user can enter anything, and we would try to put sense to it -->
+<div id="topStrip"><img/><input type="search" ng-model="searchTerm" ng-change="search()" placeholder="Type to search image"></div>
+<!-- image thumbnail strip -->
+<div id="resultStrip" ng-hide="results && results.length==0">
+    <!-- image thumbnail -->
+    <div class="result" ng-repeat="result in results" style="background: url('{{result.thumb}}'); background-size:cover" ng-click="showHiRes(result)"></div>
+</div>
+<!-- instructions, and hi-res image -->
+<div id="highRes"><span id="instruction">{{instruction}}</span><img ng-src="{{loading?loading:hires}}"></div>
+
+</body>
+</html>

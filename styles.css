@@ -1,0 +1,20 @@
+body { margin:0; padding: 0 }
+
+#topStrip { position: fixed; top:0; max-width:100%; width:100%; padding: 0.5em 0; background: rgb(32, 32, 34) }
+#topStrip img { content: url(flickr-logo.png); height: 1.5em; width:auto; vertical-align: bottom; margin-left: 4em; margin-top: 0.3em }
+#topStrip input {
+    width: 16em; height: 2em; line-height: 2em; background: rgb(210, 210, 210 ); font-size: 1em; border:none;
+    border-radius: 4px; float: right; margin-right: 8em; padding: 0 1em; outline: none; -webkit-transition: width 0.3s; transition: width 0.3s;
+}
+#topStrip input:focus { background: white; width: 22em }
+
+#resultStrip {
+    position: fixed; top: 3em; height:10.25em; width:calc( 100% - 1em ); max-width: calc( 100% - 1em );
+    overflow-x: auto; white-space: nowrap; padding: 0 0.5em; background: rgb(249, 249, 249)
+}
+.result { position: relative; display: inline-block; height:9em; width:9em; margin: 0.5em 0.5em 0.5em 0; }
+.result:hover { cursor: pointer }
+
+#highRes {  width: 100%; margin-top:13.25em; text-align: center }
+#highRes span { font: 2em Verdana, Geneva, sans-serif; color: rgb(150,150,150) }
+#highRes img { max-width: 100% }
